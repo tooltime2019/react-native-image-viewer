@@ -140,7 +140,7 @@ export class Props {
   /**
    * 自定义头部
    */
-  public renderHeader?: (currentIndex?: number) => React.ReactElement<any> = () => {
+  public renderHeader?: (currentIndex?: number, imageStatus?: string) => React.ReactElement<any> = () => {
     return null as any;
   };
 
@@ -229,6 +229,8 @@ export class Props {
   };
 
   public menus?: ({ cancel, saveToLocal }: any) => React.ReactElement<any>;
+
+  public onError?: (index?: number) => void;
 }
 
 export class State {
