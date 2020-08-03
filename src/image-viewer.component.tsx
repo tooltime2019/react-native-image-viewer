@@ -412,6 +412,13 @@ export default class ImageViewer extends React.Component<Props, State> {
     }
   };
 
+  public getImageStatus = () => {
+    if (this.state.imageSizes && this.state.imageSizes[this.state.currentShowIndex || 0]) {
+      return this.state.imageSizes[this.state.currentShowIndex || 0].status || 'loading'
+    }
+    return 'loading'
+  }
+
   /**
    * 完成布局
    */
@@ -564,6 +571,10 @@ export default class ImageViewer extends React.Component<Props, State> {
             </ImageZoom>
           );
         case 'fail':
+          if (this.props.onError) {
+            this.props.onError(index)
+          }
+
           return (
             <Wrapper
               key={index}
@@ -586,10 +597,12 @@ export default class ImageViewer extends React.Component<Props, State> {
       }
     });
 
+    const imageStatus = this.getImageStatus();
+
     return (
       <Animated.View style={{ zIndex: 9 }}>
         <Animated.View style={{ ...this.styles.container, opacity: this.fadeAnim }}>
-          {this!.props!.renderHeader!(this.state.currentShowIndex)}
+          {this!.props!.renderHeader!(this.state.currentShowIndex, imageStatus)}
 
           <View style={this.styles.arrowLeftContainer}>
             <TouchableWithoutFeedback onPress={this.goBack}>
