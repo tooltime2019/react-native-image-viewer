@@ -571,7 +571,9 @@ export default class ImageViewer extends React.Component<Props, State> {
             </ImageZoom>
           );
         case 'fail':
-          if (this.props.onError) this.props.onError(index);
+          if (this.props.onError) {
+            this.props.onError(index)
+          }
 
           return (
             <Wrapper
