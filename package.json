@@ -21,15 +21,16 @@
     "react-native-image-pan-zoom": "^2.1.12"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react": "16.6.3",
+    "react-native": "0.58.6"
   },
   "devDependencies": {
     "@types/react": "*",
     "@types/react-native": "*",
     "ascoders-tslint-config": "^1.0.2",
-    "react": "*",
-    "react-native": "*",
+    "react": "16.6.3",
+    "react-native": "0.58.6",
+    "metro-react-native-babel-preset": "0.53.1",
     "tslint": "^5.8.0",
     "tslint-config-prettier": "^1.13.0",
     "typescript": "^2.9.2"
