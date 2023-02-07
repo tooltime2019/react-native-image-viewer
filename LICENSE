@@ -1,6 +1,8 @@
 The MIT License (MIT)
 
-Copyright (c) 2015 ascoders
+Copyright (c) 2020, ToolTime GmbH
+
+Forked from react-native-image-viewer (https://github.com/ascoders/react-native-image-viewer) Copyright (c) 2015 ascoders
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
